@@ -103,8 +103,18 @@ input {
     font-size: 0.9rem;
 }
 
+input.error {
+    border: 1px solid red;
+}
+
 input:focus {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: -0.7rem;
 }
 
 .bottom {

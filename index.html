@@ -54,6 +54,7 @@
                     <div class="password1">
                         <label for="password1">Password</label>
                         <input type="password" name="user_password" id="password1" required>
+                        <p class="error-msg">* Passwords do not match</p>
                     </div>
                     <div class="password2">
                         <label for="password2">Confirm Password</label>
@@ -62,12 +63,13 @@
                 </div>
             </div>
             <div class="bottom">
-                <button>Create Account</button>
+                <button type="submit">Create Account</button>
                 <p>Already have an account? <a class="login" href="http://theodinproject.com/login">Log in</a></p>
             </div>
         </form>
 
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>
