@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "norsebold";
+    src: url("fonts/norse-bold-webfont.woff2") format("woff2"),
+        url("fonts/norse-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,27 +18,57 @@ body {
 }
 
 aside {
-    width: 33%;
-    height: 100%;
+    flex: 3;
     background-image: url("https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
     background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    background: rgba(0, 0, 0, 0.4);
+    font-family: "norsebold", sans-serif;
+    color: #fff;
+    font-size: 5rem;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+}
+
+.logo img {
+    height: 125px;
+}
+
+.img-credit {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a,
+a:visited {
+    color: #fff;
 }
 
 main {
-    width: 67%;
-    height: 100%;
+    flex: 5;
     background-color: #fafafa;
 }
 
 .top {
-    height: 35%;
+    width: 100%;
+    height: 37%;
 }
 
 .middle {
-    height: 33%;
+    height: 28%;
     background-color: #fff;
+    padding: 15px;
 }
 
 .bottom {
-
 }
