@@ -18,26 +18,28 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-aside {
+.sidebar {
     flex: 3;
     background-image: url("https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
 }
 
 .logo {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 30%;
     background: rgba(0, 0, 0, 0.4);
     font-family: "norsebold", sans-serif;
     color: #fff;
     font-size: 5rem;
     padding: 5px 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30%;
 }
 
 .logo img {
@@ -45,6 +47,11 @@ aside {
 }
 
 .img-credit {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+
     color: #ccc;
     text-align: center;
     margin-bottom: 20px;
