@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comforter+Brush");
+
 @font-face {
     font-family: "norsebold";
     src: url("fonts/norse-bold-webfont.woff2") format("woff2"),
@@ -69,6 +70,7 @@ a:visited {
 main {
     flex: 5;
     background-color: #eeebdd;
+    position: relative;
 }
 
 .top {
@@ -102,16 +104,15 @@ h3 {
 
 .middle {
     background-color: #d8b6a4;
-    padding: 1rem 3rem;
+    padding: 1rem 3rem 0 3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info {
     width: 60%;
-    padding: 0.5rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
     column-gap: 1rem;
 }
 
@@ -127,17 +128,29 @@ input {
     display: block;
     width: 200px;
     margin-bottom: 1rem;
-    border: 1px solid #e5e7eb;
+    border: 50px solid #e5e7eb;
     padding: 0.2rem 0.5rem;
     font-size: 0.9rem;
+    border-width: 1px;
 }
 
-input.error {
-    border: 1px solid red;
+input:valid {
+    border-color: green;
+}
+
+input:invalid {
+    border-color: red;
 }
 
 input:focus {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+.pwd-rules {
+    color: #630000;
+    font-size: 0.8rem;
+    margin-top: -0.7rem;
+    width: 200px;
 }
 
 .error-msg {
@@ -155,7 +168,7 @@ button {
     color: white;
     font-weight: bold;
     padding: 0.6rem 2rem;
-    margin: 2rem 0;
+    margin: 1rem 0 0.5rem 0;
     border: none;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -166,7 +179,16 @@ button:hover {
 }
 
 .login, .login:visited {
-    color :#596d48;
+    color :#630000;
     font-weight: bold;
     text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
 }
