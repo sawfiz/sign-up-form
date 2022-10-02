@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Comforter+Brush");
 @font-face {
     font-family: "norsebold";
     src: url("fonts/norse-bold-webfont.woff2") format("woff2"),
@@ -20,7 +21,7 @@ body {
 
 .sidebar {
     flex: 3;
-    background-image: url("https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
+    background-image: url("https://images.unsplash.com/photo-1664671617698-1fc91cabfb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -30,12 +31,12 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    top: 30%;
-    background: rgba(0, 0, 0, 0.4);
-    font-family: "norsebold", sans-serif;
-    color: #fff;
+    top: 10%;
+    background: rgba(255, 0, 0, 0.2);
+    /* font-family: "norsebold", sans-serif; */
+    font-family: "Comforter Brush", sans-serif;
+    color: #c0281b;
     font-size: 5rem;
-    padding: 5px 0;
 
     display: flex;
     justify-content: center;
@@ -43,7 +44,7 @@ body {
 }
 
 .logo img {
-    height: 125px;
+    height: 200px;
 }
 
 .img-credit {
@@ -52,7 +53,7 @@ body {
     position: absolute;
     bottom: 1rem;
 
-    color: #ccc;
+    color: #555;
     text-align: center;
     margin-bottom: 20px;
     font-size: 0.8rem;
@@ -60,26 +61,47 @@ body {
 
 a,
 a:visited {
-    color: #ccc;
+    color: #555;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 main {
     flex: 5;
-    background-color: #eee;
+    background-color: #eeebdd;
 }
 
 .top {
-    height: 37%;
-    padding: 13% 21% 3rem 3rem;
+    height: 40%;
+    padding: 5% 15% 3rem 3rem;
+}
+
+h1 {
+    font-style: italic;
+    font-family: "Comforter Brush";
+    font-size: 2.8rem;
+    color: #630000;
 }
 
 h2 {
-    font-size: 1.3rem;
-    margin: 1rem 0;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    font-family: "Comforter Brush";
+    color: #601e1d;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: "Comforter Brush";
+    color: #805050;
+}
+
+.saruman {
+    text-align: end;
 }
 
 .middle {
-    background-color: #fff;
+    background-color: #d8b6a4;
     padding: 1rem 3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
@@ -129,7 +151,7 @@ input:focus {
 }
 
 button {
-    background-color: #596d48;
+    background-color: #630000;
     color: white;
     font-weight: bold;
     padding: 0.6rem 2rem;
