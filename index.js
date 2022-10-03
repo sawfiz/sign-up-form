@@ -1,15 +1,14 @@
 const pwd1El = document.querySelector("#password1");
 const pwd2El = document.querySelector("#password2");
 const submitEl = document.querySelector("button");
-const errorMsgEl = document.querySelector(".error-msg")
+const errorMsgEl = document.querySelector(".error-msg");
 let error = false;
-errorMsgEl.style.opacity = 0;
 
 submitEl.addEventListener("click", (e) => {
     if (!validatePasswords()) {
         e.preventDefault();
         if (error === false) {
-            errorMsgEl.style.opacity = 1;
+            errorMsgEl.removeAttribute("hidden");
             error = true;
         }
     }
@@ -21,7 +20,7 @@ function validatePasswords() {
 
 pwd2El.addEventListener("input", () => {
     if (error === true) {
-        errorMsgEl.style.opacity = 0;
+        errorMsgEl.setAttribute("hidden", true);
         error = false;
     }
 });
