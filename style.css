@@ -22,6 +22,7 @@ body {
     background-image: url("https://images.unsplash.com/photo-1664671617698-1fc91cabfb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80");
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .logo {
