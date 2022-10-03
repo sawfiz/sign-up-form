@@ -89,6 +89,7 @@ h1 {
     font-family: "Comforter Brush";
     font-size: clamp(2rem, 3vw, 2.5rem);
     color: #630000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -96,6 +97,7 @@ h2 {
     margin: 0.5rem 0;
     font-family: "Comforter Brush";
     color: #601e1d;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
