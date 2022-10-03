@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comforter+Brush");
 
-@font-face {
-    font-family: "norsebold";
-    src: url("fonts/norse-bold-webfont.woff2") format("woff2"),
-        url("fonts/norse-bold-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -33,12 +25,12 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    top: 10%;
+    top: 15%;
     background: rgba(255, 0, 0, 0.2);
-    /* font-family: "norsebold", sans-serif; */
     font-family: "Comforter Brush", sans-serif;
+    font-weight: bolder;
     color: #c0281b;
-    font-size: 5rem;
+    font-size: clamp(2rem, 5vw, 5rem);
 
     display: flex;
     justify-content: center;
@@ -46,7 +38,7 @@ body {
 }
 
 .logo img {
-    height: 200px;
+    width: clamp(100px, 40%, 250px);
 }
 
 .img-credit {
