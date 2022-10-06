@@ -2,8 +2,6 @@
 [Project: Sign-Up Form](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form) from [Intermediate HTML and CSS](https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css) course, [the Odin Project](https://www.theodinproject.com/)
 
 ## To-do
-- HTML based validation for `tel`
-- js based input validation
 
 ## Key new concepts used
 
@@ -19,3 +17,6 @@
 - `outline: none`
 - `input::placeholder`
 - Use `position: relative` (parent), `position: abosolute` (child) to place elements
+
+### Javascript
+- js based input validation

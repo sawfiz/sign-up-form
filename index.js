@@ -1,56 +1,52 @@
+// Input elements
 const firstNameEl = document.querySelector('#first-name');
 const emailEl = document.querySelector('#email');
 const phoneEl = document.querySelector('#phone');
+const pwd1El = document.querySelector('#password1');
+const pwd2El = document.querySelector('#password2');
+const errorMsgEl = document.querySelector('.error-msg');
 
+// Elements of password rules
+const pwdRulesEl = document.querySelector('.pwd-rules');
 const capEl = document.querySelector('#cap1');
 const letEl = document.querySelector('#let1');
 const numEl = document.querySelector('#num1');
 const splEl = document.querySelector('#spl1');
 const char8El = document.querySelector('#char8');
 
-const pwd1El = document.querySelector('#password1');
-const pwd2El = document.querySelector('#password2');
-const pwdRulesEl = document.querySelector('.pwd-rules');
-const errorMsgEl = document.querySelector('.error-msg');
+// Elements of the Submit button
 const submitEl = document.querySelector('button');
 const incompleteInfoEl = document.querySelector('#incomplete-info');
 
-firstNameEl.addEventListener('input', () => validateFirstName());
-
+// Functions for validation and checking the required inputs
 function validateFirstName() {
   if (firstNameEl.validity.tooShort) {
     firstNameEl.setCustomValidity('Too Short!');
     firstNameEl.reportValidity();
     return false;
-  } else {
-    firstNameEl.setCustomValidity('');
-    return true;
   }
+  firstNameEl.setCustomValidity('');
+  return true;
 }
-
-emailEl.addEventListener('input', () => validateEmail());
 
 function validateEmail() {
   if (emailEl.validity.typeMismatch) {
     emailEl.setCustomValidity('Not an email!');
     emailEl.reportValidity();
     return false;
-  } else if (emailEl.validity.tooShort) {
+  }
+  if (emailEl.validity.tooShort) {
     emailEl.setCustomValidity('Too short!');
     emailEl.reportValidity();
     return false;
-  } else {
-    emailEl.setCustomValidity('');
-    return true;
   }
+  emailEl.setCustomValidity('');
+  return true;
 }
-
-phoneEl.addEventListener('input', () => validatePhone());
 
 function validatePhone() {
   const nonNum = phoneEl.value.match(/[^0-9]/g);
   if (nonNum) {
-    console.log(nonNum);
     if (nonNum.length > 0) {
       phoneEl.setCustomValidity('Numbers only!');
       phoneEl.reportValidity();
@@ -65,8 +61,6 @@ function validatePhone() {
   phoneEl.setCustomValidity('');
   return true;
 }
-
-pwd1El.addEventListener('input', () => validatePassword());
 
 function validatePassword() {
   let conditionsMet = 0;
@@ -92,18 +86,17 @@ function validatePassword() {
   char8El.style.color = len >= 8 ? 'green' : '#c0c0c0';
   conditionsMet += len >= 8 ? 1 : 0;
 
-  return conditionsMet >= 5 ? true : false;
+  return conditionsMet >= 5;
 }
 
 function checkFirstName() {
   if (firstNameEl.validity.valueMissing) {
     incompleteInfoEl.innerText = 'First name missing';
     return false;
-  } else {
-    if (!validateFirstName()) {
-      incompleteInfoEl.innerText = 'First name invalid';
-      return false;
-    }
+  }
+  if (!validateFirstName()) {
+    incompleteInfoEl.innerText = 'First name invalid';
+    return false;
   }
   return true;
 }
@@ -144,43 +137,27 @@ function checkPassword() {
   return true;
 }
 
-submitEl.addEventListener('click', (e) => {
-  if (!checkFirstName()) {
-    showError();
-    e.preventDefault();
-  } else {
-    if (!checkEmail()) {
-      showError();
-      e.preventDefault();
-    } else {
-      if (!checkPhone()) {
-        showError();
-        e.preventDefault();
-      } else {
-        if (!checkPassword()) {
-          showError();
-          e.preventDefault();
-        } else {
-          if (!matchPasswords()) {
-            errorMsgEl.removeAttribute('hidden');
-            e.preventDefault();
-            return;
-          }
-        }
-      }
-    }
-  }
-});
+function matchPasswords() {
+  return pwd2El.value === pwd1El.value;
+}
 
+// Utility function to create a delay
+function delay(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+// Error is shown for 2 seconds
 async function showError() {
   incompleteInfoEl.classList.add('show');
   await delay(2000);
   incompleteInfoEl.classList.remove('show');
 }
 
-function matchPasswords() {
-  return pwd2El.value === pwd1El.value ? true : false;
-}
+// Main event listeners
+firstNameEl.addEventListener('input', () => validateFirstName());
+emailEl.addEventListener('input', () => validateEmail());
+phoneEl.addEventListener('input', () => validatePhone());
+pwd1El.addEventListener('input', () => validatePassword());
 
 pwd1El.addEventListener('focus', () => {
   pwdRulesEl.classList.add('show');
@@ -190,7 +167,17 @@ pwd2El.addEventListener('input', () => {
   errorMsgEl.setAttribute('hidden', true);
 });
 
-// Utility function to create a delay
-function delay(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
+submitEl.addEventListener('click', (e) => {
+  if (!checkFirstName()) {
+    showError();
+  } else if (!checkEmail()) {
+    showError();
+  } else if (!checkPhone()) {
+    showError();
+  } else if (!checkPassword()) {
+    showError();
+  } else if (!matchPasswords()) {
+    errorMsgEl.removeAttribute('hidden');
+  }
+  e.preventDefault();
+});
