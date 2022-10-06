@@ -170,14 +170,18 @@ pwd2El.addEventListener('input', () => {
 submitEl.addEventListener('click', (e) => {
   if (!checkFirstName()) {
     showError();
+    e.preventDefault();
   } else if (!checkEmail()) {
     showError();
+    e.preventDefault();
   } else if (!checkPhone()) {
     showError();
+    e.preventDefault();
   } else if (!checkPassword()) {
     showError();
+    e.preventDefault();
   } else if (!matchPasswords()) {
     errorMsgEl.removeAttribute('hidden');
+    e.preventDefault();
   }
-  e.preventDefault();
 });
