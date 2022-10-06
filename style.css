@@ -165,11 +165,16 @@ input:focus {
 }
 
 .pwd-rules {
+  visibility: hidden;
   color: #c0c0c0;
   font-size: 0.8rem;
   margin-top: -0.7rem;
   width: 200px;
   text-shadow: 1px 1px 2px black;
+}
+
+.pwd-rules.show {
+  visibility: visible;
 }
 
 .error-msg {
@@ -191,6 +196,17 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+#incomplete-info {
+  visibility: hidden;
+  padding-left: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
+#incomplete-info.show {
+  visibility: visible;
 }
 
 .login,

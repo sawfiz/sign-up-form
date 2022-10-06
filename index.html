@@ -34,13 +34,13 @@
         <h3>Sign up <em>now</em> to be tourtured and mutilated!</h3>
         <h3>You <em>know</em> you want to.</h3>
       </div>
-      <form action="http://httpbin.org/post" method="post">
+      <form action="http://httpbin.org/post" method="post" novalidate>
         <div class="middle">
           <h1>Let's do this!</h1>
           <div class="contact-info">
             <div>
               <label for="first-name">First Name*</label>
-              <input type="text" name="user_first_name" id="first-name" required minlength="2" maxlength="10"
+              <input type="text" name="user_first_name" id="first-name" required minlength="5" maxlength="10"
                 placeholder="Ugluk">
             </div>
             <div>
@@ -54,15 +54,20 @@
             </div>
             <div>
               <label for="phone">Phone Number</label>
-              <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="15" placeholder="666-6666" required
+              <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="15" placeholder="666-6666"
                 pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d+)\)?)[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?)+)(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i">
             </div>
             <div>
               <label for="password1">Password*</label>
               <input type="password" name="user_password" id="password1" required maxlength="16"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-              <p class="pwd-rules">At least 8 characters with:<br> 1 letter / 1 capital letter /<br>1
-                number / 1 special character</p>
+              <p class="pwd-rules">
+                <span id="char8">At least 8 characters /<br></span>
+                <span id="let1">1 letter /</span>
+                <span id="cap1">1 capital letter /<br></span>
+                <span id="num1">1 number /</span>
+                <span id="spl1">1 special character</span>
+              </p>
             </div>
             <div>
               <label for="password2">Confirm Password*</label>
@@ -74,6 +79,7 @@
         </div>
         <div class="bottom">
           <button type="submit">Create Account</button>
+          <span id="incomplete-info">Complete the form!</span>
           <p>Already have an account? <a class="login" href="http://theodinproject.com/login">Log in</a>
           </p>
         </div>
