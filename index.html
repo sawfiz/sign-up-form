@@ -34,7 +34,7 @@
         <h3>Sign up <em>now</em> to be tourtured and mutilated!</h3>
         <h3>You <em>know</em> you want to.</h3>
       </div>
-      <form action="http://httpbin.org/post" method="post" novalidate>
+      <form action="http://httpbin.org/post" method="post">
         <div class="middle">
           <h1>Let's do this!</h1>
           <div class="contact-info">
@@ -54,8 +54,8 @@
             </div>
             <div>
               <label for="phone">Phone Number</label>
-              <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="15" placeholder="666-6666"
-                pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d+)\)?)[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?)+)(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i">
+              <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="10" placeholder="6666666" required
+              pattern="\d{7,10}">
             </div>
             <div>
               <label for="password1">Password*</label>

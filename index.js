@@ -1,5 +1,6 @@
 const firstNameEl = document.querySelector('#first-name');
 const emailEl = document.querySelector('#email');
+const phoneEl = document.querySelector('#phone');
 
 const capEl = document.querySelector('#cap1');
 const letEl = document.querySelector('#let1');
@@ -14,9 +15,9 @@ const errorMsgEl = document.querySelector('.error-msg');
 const submitEl = document.querySelector('button');
 const incompleteInfoEl = document.querySelector('#incomplete-info');
 
-firstNameEl.addEventListener('input', () => firstNameValid());
+firstNameEl.addEventListener('input', () => validateFirstName());
 
-function firstNameValid() {
+function validateFirstName() {
   if (firstNameEl.validity.tooShort) {
     firstNameEl.setCustomValidity('Too Short!');
     firstNameEl.reportValidity();
@@ -27,9 +28,9 @@ function firstNameValid() {
   }
 }
 
-emailEl.addEventListener('input', () => emailValid());
+emailEl.addEventListener('input', () => validateEmail());
 
-function emailValid() {
+function validateEmail() {
   if (emailEl.validity.typeMismatch) {
     emailEl.setCustomValidity('Not an email!');
     emailEl.reportValidity();
@@ -44,44 +45,30 @@ function emailValid() {
   }
 }
 
-pwd1El.addEventListener('input', () => {
-  checkPassword();
-});
+phoneEl.addEventListener('input', () => validatePhone());
 
-
-
-function checkFirstName() {
-  if (firstNameEl.validity.valueMissing) {
-    incompleteInfoEl.innerText = 'First name missing';
-    return false;
-  } else {
-    if (!firstNameValid()) {
-      incompleteInfoEl.innerText = 'First name invalid';
+function validatePhone() {
+  const nonNum = phoneEl.value.match(/[^0-9]/g);
+  if (nonNum) {
+    console.log(nonNum);
+    if (nonNum.length > 0) {
+      phoneEl.setCustomValidity('Numbers only!');
+      phoneEl.reportValidity();
       return false;
     }
   }
+  if (phoneEl.validity.tooShort) {
+    phoneEl.setCustomValidity('Too Short!');
+    phoneEl.reportValidity();
+    return false;
+  }
+  phoneEl.setCustomValidity('');
   return true;
 }
 
-function checkEmail() {
-  if (emailEl.validity.valueMissing) {
-    incompleteInfoEl.innerText = 'Email missing';
-    return false;
-  } else {
-    if (!emailValid()) {
-      incompleteInfoEl.innerText = 'Email invalid';
-      return false;
-    }
-  }
-  return true;
-}
+pwd1El.addEventListener('input', () => validatePassword());
 
-function checkPassword() {
-  if (pwd1El.validity.valueMissing) {
-    incompleteInfoEl.innerText = 'Password missing';
-    return false;
-  }
-
+function validatePassword() {
   let conditionsMet = 0;
 
   const cap = pwd1El.value.match(/[A-Z]/g);
@@ -101,11 +88,56 @@ function checkPassword() {
   conditionsMet += spl ? 1 : 0;
 
   const len = pwd1El.value.length;
-  
+
   char8El.style.color = len >= 8 ? 'green' : '#c0c0c0';
   conditionsMet += len >= 8 ? 1 : 0;
 
-  if (conditionsMet < 5 ) {
+  return conditionsMet >= 5 ? true : false;
+}
+
+function checkFirstName() {
+  if (firstNameEl.validity.valueMissing) {
+    incompleteInfoEl.innerText = 'First name missing';
+    return false;
+  } else {
+    if (!validateFirstName()) {
+      incompleteInfoEl.innerText = 'First name invalid';
+      return false;
+    }
+  }
+  return true;
+}
+
+function checkEmail() {
+  if (emailEl.validity.valueMissing) {
+    incompleteInfoEl.innerText = 'Email missing';
+    return false;
+  }
+  if (!validateEmail()) {
+    incompleteInfoEl.innerText = 'Email invalid';
+    return false;
+  }
+  return true;
+}
+
+function checkPhone() {
+  if (phoneEl.validity.valueMissing) {
+    incompleteInfoEl.innerText = 'Phone number missing';
+    return false;
+  }
+  if (!validatePhone()) {
+    incompleteInfoEl.innerText = 'Phone number invalid';
+    return false;
+  }
+  return true;
+}
+
+function checkPassword() {
+  if (pwd1El.validity.valueMissing) {
+    incompleteInfoEl.innerText = 'Password missing';
+    return false;
+  }
+  if (!validatePassword()) {
     incompleteInfoEl.innerText = 'Password invalid';
     return false;
   }
@@ -113,8 +145,6 @@ function checkPassword() {
 }
 
 submitEl.addEventListener('click', (e) => {
-  console.log(firstNameValid());
-
   if (!checkFirstName()) {
     showError();
     e.preventDefault();
@@ -123,16 +153,21 @@ submitEl.addEventListener('click', (e) => {
       showError();
       e.preventDefault();
     } else {
-      if (!checkPassword()) {
+      if (!checkPhone()) {
         showError();
         e.preventDefault();
       } else {
-        if (!matchPasswords()) {
+        if (!checkPassword()) {
+          showError();
+          e.preventDefault();
+        } else {
+          if (!matchPasswords()) {
             errorMsgEl.removeAttribute('hidden');
             e.preventDefault();
             return;
           }
         }
+      }
     }
   }
 });

@@ -201,12 +201,16 @@ button:hover {
 #incomplete-info {
   visibility: hidden;
   padding-left: 1rem;
-  color: red;
+  color: #c02b1b;
   font-weight: bold;
+  font-family: impact;
+  transition: ease-in 0.5s;
 }
 
 #incomplete-info.show {
   visibility: visible;
+  /* transform: translate(100px, 100px); */
+  padding-left: 3rem;
 }
 
 .login,
