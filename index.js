@@ -64,6 +64,10 @@ function validatePhone() {
 }
 
 function validatePassword() {
+  const allowed = /^[A-Za-z\d@$!%*?&]*$/g.test(pwd1El.value);
+  allowedEl.style.color = allowed ? '#green' : 'red';
+  if (!allowed) return false;
+
   let conditionsMet = 0;
 
   const cap = pwd1El.value.match(/[A-Z]/g);
@@ -82,13 +86,11 @@ function validatePassword() {
   splEl.style.color = spl ? 'green' : '#c0c0c0';
   conditionsMet += spl ? 1 : 0;
 
+  allowedEl.style.color = cap || letter || num || spl ? 'green' : '#c0c0c0';
+
   const len = pwd1El.value.length;
   char8El.style.color = len >= 8 ? 'green' : '#c0c0c0';
   conditionsMet += len >= 8 ? 1 : 0;
-
-  const allowed = /^[A-Za-z\d@$!%*?&]*$/g.test(pwd1El.value);
-  allowedEl.style.color = allowed ? 'green' : 'red';
-  if (!allowed) return false;
 
   return conditionsMet >= 5;
 }
