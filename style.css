@@ -1,202 +1,210 @@
-@import url("https://fonts.googleapis.com/css?family=Comforter+Brush");
+@import url('https://fonts.googleapis.com/css?family=Comforter+Brush');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    position: relative;
-    background: #666;
+body {
+  position: relative;
+  background: #666;
 }
 
 .content-container {
-    min-height: 100vh;
-    width: min(1440px, 100vw);
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 1rem;
+  min-height: 100vh;
+  width: min(1440px, 100vw);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 1rem;
 }
 
 .sidebar {
-    flex: 3;
-    background-image: url("https://images.unsplash.com/photo-1664671617698-1fc91cabfb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80");
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  flex: 3;
+  background-image: url('https://images.unsplash.com/photo-1664671617698-1fc91cabfb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .logo {
-    position: absolute;
-    width: 100%;
-    top: 15%;
-    background: rgba(255, 0, 0, 0.2);
-    font-family: "Comforter Brush", sans-serif;
-    font-weight: bolder;
-    color: #c0281b;
-    font-size: clamp(2rem, 5vw, 5rem);
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  background: rgba(255, 0, 0, 0.2);
+  font-family: 'Comforter Brush', sans-serif;
+  font-weight: bolder;
+  color: #c0281b;
+  font-size: clamp(2rem, 5vw, 5rem);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo img {
-    width: clamp(125px, 40%, 250px);
+  width: clamp(125px, 40%, 250px);
 }
 
 .img-credit {
-    width: 100%;
-    position: absolute;
-    bottom: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
 
-    color: #555;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
 }
 
 a,
 a:visited {
-    color: #555;
-    font-weight: bold;
-    text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 main {
-    flex: 5;
-    /* background-color: #eeebdd; */
-    background-color: #c0b0b0;
-    padding-top: 2rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 5;
+  /* background-color: #eeebdd; */
+  background-color: #c0b0b0;
+  padding-top: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.top, .middle, .bottom {
-    --contentWidth: 700px;
-    --blockPadding: 1rem;
-    padding: var(--blockPadding) clamp(1rem, 5%,  50% - var(--contentWidth)/2 )
+.top,
+.middle,
+.bottom {
+  --contentWidth: 700px;
+  --blockPadding: 1rem;
+  padding: var(--blockPadding) clamp(1rem, 5%, 50% - var(--contentWidth) / 2);
 }
 
 h1 {
-    font-style: italic;
-    font-family: "Comforter Brush";
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    color: #630000;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-style: italic;
+  font-family: 'Comforter Brush';
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #630000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    margin: 0.5rem 0;
-    font-family: "Comforter Brush";
-    color: #601e1d;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin: 0.5rem 0;
+  font-family: 'Comforter Brush';
+  color: #601e1d;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-    font-size: clamp(1.3rem, 1.8vw, 1.5rem);
-    font-family: "Comforter Brush";
-    color: #805050;
+  font-size: clamp(1.3rem, 1.8vw, 1.5rem);
+  font-family: 'Comforter Brush';
+  color: #805050;
 }
 
 .saruman {
-    text-align: end;
+  text-align: end;
 }
 
 .middle {
-    background-color: #d8b6a4;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    padding-bottom: 0;
-    background-image: url("images/uruk-hai.jpg");
-    background-size: cover;
+  background-color: #d8b6a4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 0;
+  background-image: url('images/uruk-hai.jpg');
+  background-size: cover;
 }
 
 .contact-info {
-    width: 60%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr;
-    column-gap: 1rem;
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+  column-gap: 1rem;
 }
 
 label {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #c0c0c0;
-    text-shadow: 1px 1px 2px black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #c0c0c0;
+  text-shadow: 1px 1px 2px black;
 }
 
 input {
-    display: block;
-    width: 200px;
-    margin-bottom: 1rem;
-    border: 1px solid;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.9rem;
-    border-width: 1px;
+  display: block;
+  width: 200px;
+  margin-bottom: 1rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  border-width: 1px;
+  outline: none;
+}
+
+input::placeholder {
+  color:rgba(0, 0, 0, 0.3)
 }
 
 input:valid {
-    border-color: green;
+  background-color: honeydew;
 }
 
 input:invalid {
-    border-color: red;
+  background: pink;
 }
 
 input:focus {
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  border: 1px solid #000;
+  box-shadow: 4px 4px 8px #502020;
 }
 
 .pwd-rules {
-    color: #c0c0c0;
-    font-size: 0.8rem;
-    margin-top: -0.7rem;
-    width: 200px;
-    text-shadow: 1px 1px 2px black;
+  color: #c0c0c0;
+  font-size: 0.8rem;
+  margin-top: -0.7rem;
+  width: 200px;
+  text-shadow: 1px 1px 2px black;
 }
 
 .error-msg {
-    color: red;
-    font-size: 0.8rem;
-    margin-top: -0.7rem;
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -0.7rem;
 }
 
 button {
-    background-color: #502020;
-    color: white;
-    font-weight: bold;
-    padding: 0.6rem 2rem;
-    margin: 1rem 0 0.5rem 0;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #502020;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 2rem;
+  margin: 1rem 0 0.5rem 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.login, .login:visited {
-    color :#630000;
-    font-weight: bold;
-    text-decoration: none;
+.login,
+.login:visited {
+  color: #630000;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 footer {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.8rem;
-    height: 1rem;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  height: 1rem;
 }

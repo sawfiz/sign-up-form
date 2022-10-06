@@ -2,88 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serve Sauron, Join Uruk-Hai</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serve Sauron, Join Uruk-Hai</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="content-container">
-        <div class="sidebar">
-            <div class="logo">
-                <img src="images/Flag_of_Mordor.svg" alt="The logo image">
-                URUK
-            </div>
-            <div class="img-credit">
-                Photo by
-                <a href="https://unsplash.com/@srjefers">Jeferson Argueta</a>
-                on
-                <a
-                    href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-            </div>
-        </div>
-        <main>
-            <div class="top">
-                <h1>"We must join with him. We must join with <em>Sauron</em>."</h1>
-                <h2 class="saruman">- Saruman the White, the Third Age</h2>
-                <h3><em>The Dark Lord</em> rises again. It's time for you to serve! You know you need something like
-                    this in
-                    your life to help you
-                    realize your deepest dreams.</h3>
-                <h3>Sign up <em>now</em> to be tourtured and mutilated!</h3>
-                <h3>You <em>know</em> you want to.</h3>
-            </div>
-            <form action="http://httpbin.org/post" method="post">
-                <div class="middle">
-                    <h1>Let's do this!</h1>
-                    <div class="contact-info">
-                        <div>
-                            <label for="first-name">First Name*</label>
-                            <input type="text" name="user_first_name" id="first-name" required minlength="2"
-                                maxlength="10" placeholder="Ugluk">
-                        </div>
-                        <div>
-                            <label for="last-name">Last Name</label>
-                            <input type="text" name="user_last_name" id="last-name" minlength="2" maxlength="10"
-                                placeholder="Lurtz">
-                        </div>
-                        <div>
-                            <label for="email">Email*</label>
-                            <input type="email" name="user_email" id="email" required minlength="10" maxlength="20"
-                                placeholder="uglukl@mordor.com">
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="15"
-                                placeholder="6666666">
-                        </div>
-                        <div>
-                            <label for="password1">Password*</label>
-                            <input type="password" name="user_password" id="password1" required maxlength="16"
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                            <p class="pwd-rules">At least 8 characters with:<br> 1 letter / 1 capital letter /<br>1
-                                number / 1 special character</p>
-                        </div>
-                        <div>
-                            <label for="password2">Confirm Password*</label>
-                            <input type="password" name="" id="password2" required maxlength="16"
-                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                            <p class="error-msg" hidden>* Passwords do not match</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom">
-                    <button type="submit">Create Account</button>
-                    <p>Already have an account? <a class="login" href="http://theodinproject.com/login">Log in</a>
-                    </p>
-                </div>
-            </form>
-        </main>
+  <div class="content-container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="images/Flag_of_Mordor.svg" alt="The logo image">
+        URUK
+      </div>
+      <div class="img-credit">
+        Photo by
+        <a href="https://unsplash.com/@srjefers">Jeferson Argueta</a>
+        on
+        <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      </div>
     </div>
-    <footer>Copyright &copy; sawfiz@github</footer>
-    <script src="index.js"></script>
+    <main>
+      <div class="top">
+        <h1>"We must join with him. We must join with <em>Sauron</em>."</h1>
+        <h2 class="saruman">- Saruman the White, the Third Age</h2>
+        <h3><em>The Dark Lord</em> rises again. It's time for you to serve! You know you need something like
+          this in
+          your life to help you
+          realize your deepest dreams.</h3>
+        <h3>Sign up <em>now</em> to be tourtured and mutilated!</h3>
+        <h3>You <em>know</em> you want to.</h3>
+      </div>
+      <form action="http://httpbin.org/post" method="post">
+        <div class="middle">
+          <h1>Let's do this!</h1>
+          <div class="contact-info">
+            <div>
+              <label for="first-name">First Name*</label>
+              <input type="text" name="user_first_name" id="first-name" required minlength="2" maxlength="10"
+                placeholder="Ugluk">
+            </div>
+            <div>
+              <label for="last-name">Last Name</label>
+              <input type="text" name="user_last_name" id="last-name" minlength="2" maxlength="10" placeholder="Lurtz">
+            </div>
+            <div>
+              <label for="email">Email*</label>
+              <input type="email" name="user_email" id="email" required minlength="10" maxlength="20"
+                placeholder="uglukl@mordor.com">
+            </div>
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="15" placeholder="666-6666" required
+                pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d+)\)?)[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?)+)(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i">
+            </div>
+            <div>
+              <label for="password1">Password*</label>
+              <input type="password" name="user_password" id="password1" required maxlength="16"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+              <p class="pwd-rules">At least 8 characters with:<br> 1 letter / 1 capital letter /<br>1
+                number / 1 special character</p>
+            </div>
+            <div>
+              <label for="password2">Confirm Password*</label>
+              <input type="password" name="" id="password2" required maxlength="16"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+              <p class="error-msg" hidden>* Passwords do not match</p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a class="login" href="http://theodinproject.com/login">Log in</a>
+          </p>
+        </div>
+      </form>
+    </main>
+  </div>
+  <footer>Copyright &copy; sawfiz@github</footer>
+  <script src="index.js"></script>
 </body>
 
 </html>
