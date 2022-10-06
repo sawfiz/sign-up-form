@@ -13,6 +13,7 @@ const letEl = document.querySelector('#let1');
 const numEl = document.querySelector('#num1');
 const splEl = document.querySelector('#spl1');
 const char8El = document.querySelector('#char8');
+const allowedEl = document.querySelector('#allowed');
 
 // Elements of the Submit button
 const submitEl = document.querySelector('button');
@@ -77,14 +78,17 @@ function validatePassword() {
   numEl.style.color = num ? 'green' : '#c0c0c0';
   conditionsMet += num ? 1 : 0;
 
-  const spl = pwd1El.value.match(/[!@#$%^&*]/g);
+  const spl = pwd1El.value.match(/[@$!%*?&]/g);
   splEl.style.color = spl ? 'green' : '#c0c0c0';
   conditionsMet += spl ? 1 : 0;
 
   const len = pwd1El.value.length;
-
   char8El.style.color = len >= 8 ? 'green' : '#c0c0c0';
   conditionsMet += len >= 8 ? 1 : 0;
+
+  const allowed = /^[A-Za-z\d@$!%*?&]*$/g.test(pwd1El.value);
+  allowedEl.style.color = allowed ? 'green' : 'red';
+  if (!allowed) return false;
 
   return conditionsMet >= 5;
 }

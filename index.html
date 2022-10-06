@@ -55,18 +55,18 @@
             <div>
               <label for="phone">Phone Number</label>
               <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="10" placeholder="6666666" required
-              pattern="\d{7,10}">
+                pattern="\d{7,10}">
             </div>
             <div>
               <label for="password1">Password*</label>
               <input type="password" name="user_password" id="password1" required maxlength="16"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
               <p class="pwd-rules">
-                <span id="char8">At least 8 characters /<br></span>
+                <span id="char8">At least 8</span> <span id="allowed">allowed characters<br></span>
                 <span id="let1">1 letter /</span>
                 <span id="cap1">1 capital letter /<br></span>
                 <span id="num1">1 number /</span>
-                <span id="spl1">1 special character</span>
+                <span id="spl1">1 of @$!%*?&</span>
               </p>
             </div>
             <div>
