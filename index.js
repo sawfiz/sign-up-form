@@ -169,6 +169,10 @@ pwd1El.addEventListener('focus', () => {
   pwdRulesEl.classList.add('show');
 });
 
+pwd1El.addEventListener('blur', () => {
+  pwdRulesEl.classList.remove('show');
+});
+
 pwd2El.addEventListener('input', () => {
   errorMsgEl.setAttribute('hidden', true);
 });

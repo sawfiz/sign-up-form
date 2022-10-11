@@ -15,6 +15,7 @@
 
 ### Javascript
 - js based input validation
+- The opposite of 'focus' event is 'blur'
 
 ### Others
 - Crop SVG by changing `viewbox`
