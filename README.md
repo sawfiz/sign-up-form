@@ -11,6 +11,7 @@
 - `outline: none`
 - `input::placeholder`
 - Use `position: relative` (parent), `position: abosolute` (child) to place elements
+- Use ::after to added "*" to required inputs
 
 ### Javascript
 - js based input validation
@@ -21,6 +22,7 @@
 
 ## To-do
 - How to add favicon
+- Use ::after to create a tooltip when clicking on an input field.
 
 ## Live site
 https://sawfiz.github.io/sign-up-form/

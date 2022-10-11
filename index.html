@@ -38,8 +38,8 @@
         <div class="middle">
           <h1>Let's do this!</h1>
           <div class="contact-info">
-            <div>
-              <label for="first-name">First Name*</label>
+            <div id="first-name-container">
+              <label for="first-name" class="required">First Name</label>
               <input type="text" name="user_first_name" id="first-name" required minlength="5" maxlength="10"
                 placeholder="Ugluk">
             </div>
@@ -48,17 +48,17 @@
               <input type="text" name="user_last_name" id="last-name" minlength="2" maxlength="10" placeholder="Lurtz">
             </div>
             <div>
-              <label for="email">Email*</label>
+              <label for="email" class="required">Email</label>
               <input type="email" name="user_email" id="email" required minlength="10" maxlength="20"
                 placeholder="uglukl@mordor.com">
             </div>
             <div>
-              <label for="phone">Phone Number</label>
+              <label for="phone" class="required">Phone Number</label>
               <input type="tel" name="user_phone" id="phone" minlength="7" maxlength="10" placeholder="6666666" required
                 pattern="\d{7,10}">
             </div>
             <div>
-              <label for="password1">Password*</label>
+              <label for="password1" class="required">Password</label>
               <input type="password" name="user_password" id="password1" required maxlength="16"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
               <p class="pwd-rules">
@@ -70,7 +70,7 @@
               </p>
             </div>
             <div>
-              <label for="password2">Confirm Password*</label>
+              <label for="password2" class="required">Confirm Password</label>
               <input type="password" name="" id="password2" required maxlength="16"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
               <p class="error-msg" hidden>* Passwords do not match</p>
